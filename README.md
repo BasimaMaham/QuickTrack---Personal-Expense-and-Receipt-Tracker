@@ -8,7 +8,7 @@ spending.
 Built for the DevOps Internship Session 3 assignment — a full production
 deployment, not just a local demo.
 
-**Live app:** https://YOUR-DOMAIN-HERE
+**Live app:** https://quicktrackexpenses.duckdns.org/
 **Demo video:** https://YOUR-LINKEDIN-POST-HERE
 
 ---
