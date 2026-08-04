@@ -69,11 +69,19 @@ export default function Home() {
 
   const handleSaveBudgets = async () => {
     const { data: { user: authedUser } } = await supabase.auth.getUser();
-    const rows = CATEGORIES
+    const toUpsert = CATEGORIES
       .filter(c => budgetDraft[c] !== undefined && budgetDraft[c] !== '')
       .map(c => ({ user_id: authedUser.id, category: c, monthly_limit: Number(budgetDraft[c]) }));
-    if (rows.length === 0) return;
-    await supabase.from('budgets').upsert(rows, { onConflict: 'user_id,category' });
+    const toDelete = CATEGORIES.filter(
+      c => (budgetDraft[c] === undefined || budgetDraft[c] === '') && budgets[c] !== undefined
+    );
+
+    if (toUpsert.length) {
+      await supabase.from('budgets').upsert(toUpsert, { onConflict: 'user_id,category' });
+    }
+    if (toDelete.length) {
+      await supabase.from('budgets').delete().eq('user_id', authedUser.id).in('category', toDelete);
+    }
     fetchBudgets();
   };
 
