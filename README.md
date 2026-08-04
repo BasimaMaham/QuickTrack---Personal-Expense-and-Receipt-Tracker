@@ -9,7 +9,7 @@ Built for the DevOps Internship Session 3 assignment — a full production
 deployment, not just a local demo.
 
 **Live app:** https://quicktrackexpenses.duckdns.org/
-**Demo video:** https://YOUR-LINKEDIN-POST-HERE
+**Demo video:** https://www.linkedin.com/posts/basima-maham_devops-webdevelopment-ai-ugcPost-7490523744373772288-WCm-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF3ZfQkBg-0VHWz1xkKL6orzoxdDSgSLFso
 
 ---
 
